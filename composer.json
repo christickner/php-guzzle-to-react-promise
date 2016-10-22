@@ -1,5 +1,5 @@
 {
-    "name": "christickner/php-guzzle-promise-to-react",
+    "name": "tickner/guzzle-to-react-promise",
     "description": "Transform a Guzzle Promise to a React Promise",
     "autoload": {
         "files": ["src/functions.php"]
