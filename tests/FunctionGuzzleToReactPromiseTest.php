@@ -77,6 +77,6 @@ final class FunctionGuzzleToReactPromiseTest extends TestCase
     private function runGuzzlePromisesTaskQueue()
     {
         // Guzzle Promises require the use of a singleton \GuzzleHttp\Promise\TaskQueue
-        \GuzzleHttp\Promise\queue()->run();
+        \GuzzleHttp\Promise\Utils::queue()->run();
     }
 }
