@@ -2,17 +2,17 @@
 
 namespace Tickner\GuzzleToReactPromise;
 
-use GuzzleHttp\Promise\Promise as GuzzlePromise;
+use GuzzleHttp\Promise\PromiseInterface as GuzzlePromiseInterface;
 use React\Promise\Deferred as ReactDeferred;
-use React\Promise\Promise as ReactPromise;
+use React\Promise\PromiseInterface as ReactPromiseInterface;
 
 /**
- * Transforms a GuzzleHttp\Promise\Promise to a React\Promise\Promise.
+ * Transforms a GuzzleHttp\Promise\PromiseInterface to a React\Promise\PromiseInterface.
  *
  * @param GuzzlePromise $guzzlePromise
  * @return ReactPromise
  */
-function guzzleToReactPromise(GuzzlePromise $guzzlePromise) {
+function guzzleToReactPromise(GuzzlePromiseInterface $guzzlePromise): ReactPromiseInterface {
     $deferred = new ReactDeferred();
 
     $guzzlePromise->then(
@@ -30,9 +30,9 @@ function guzzleToReactPromise(GuzzlePromise $guzzlePromise) {
 /**
  * An alias for the "guzzleToReactPromise" function.
  *
- * @param GuzzlePromise $promise
- * @return ReactPromise
+ * @param GuzzlePromiseInterface $promise
+ * @return ReactPromiseInterface
  */
-function g2rp(GuzzlePromise $promise) {
+function g2rp(GuzzlePromiseInterface $promise): ReactPromiseInterface {
     return guzzleToReactPromise($promise);
 }

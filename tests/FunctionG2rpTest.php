@@ -11,7 +11,7 @@ final class FunctionG2rpTest extends TestCase
     /**
      * @test
      */
-    public function g2rp_is_an_alias_for_guzzle_to_react_promise_function()
+    public function g2rp_is_an_alias_for_guzzle_to_react_promise_function(): void
     {
         $guzzlePromise = new GuzzlePromise();
         $reactPromise = \Tickner\GuzzleToReactPromise\g2rp($guzzlePromise);

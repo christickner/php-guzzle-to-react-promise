@@ -11,7 +11,7 @@ final class FunctionGuzzleToReactPromiseTest extends TestCase
     /**
      * @test
      */
-    public function it_converts_a_guzzle_promise_to_a_react_promise()
+    public function it_converts_a_guzzle_promise_to_a_react_promise(): void
     {
         $guzzlePromise = new GuzzlePromise();
         $reactPromise = \Tickner\GuzzleToReactPromise\guzzleToReactPromise($guzzlePromise);
@@ -21,7 +21,7 @@ final class FunctionGuzzleToReactPromiseTest extends TestCase
     /**
      * @test
      */
-    public function the_converted_react_promise_gets_fulfilled_when_the_guzzle_promise_resolves()
+    public function the_converted_react_promise_gets_fulfilled_when_the_guzzle_promise_resolves(): void
     {
         $guzzlePromise = new GuzzlePromise();
         $promisedVal = null;
@@ -77,6 +77,6 @@ final class FunctionGuzzleToReactPromiseTest extends TestCase
     private function runGuzzlePromisesTaskQueue()
     {
         // Guzzle Promises require the use of a singleton \GuzzleHttp\Promise\TaskQueue
-        \GuzzleHttp\Promise\queue()->run();
+        \GuzzleHttp\Promise\Utils::queue()->run();
     }
 }
